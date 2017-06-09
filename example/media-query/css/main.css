@@ -1,3 +1,11 @@
+.clearfix:after{
+	content:'.';
+	height:0;
+	display:block;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix{*zoom:1;}
 @font-face { 
     font-family: 'BebasNeueRegular'; 
     src: url('../fonts/bebas_neue/BebasNeue Bold.otf'); 
@@ -8,6 +16,7 @@ body{
 	font-size:100%;
 	font-size:16px;
 	font-size:1em;
+	box-shadow:inset 0 0 30px #000;
 }
 img{max-width:100%;}
 #wrapper { 
@@ -63,6 +72,7 @@ nav ul li a{
 	color: black;
     font-family:'BebasNeueRegular';
     font-size:1.875em; /* 30 ÷ 16 */
+	text-shadow:0 1px 0 hsla(0, 0%, 100%, 0.75);
 }
 .oscarMain {
     float: left;
@@ -83,12 +93,14 @@ nav ul li a{
     font-family: 'BebasNeueRegular';
 	text-transform: uppercase;
     font-size: 6.375em; /* 102 ÷ 16 */ 
+	text-shadow:0 1px 0 hsla(0, 0%, 100%, 0.75),4px 4px #dad7d7;
 }
 #content h1 em {
     color: #757474;
     display: block;
 	line-height:1.052631579em;
     font-size:.550724638em;/* 38 ÷ 69 */
+	text-shadow:none;
 }
 #content h2 {
     font-family: "BebasNeueRegular";
@@ -151,7 +163,10 @@ aside  h1 {
     margin-bottom: 20px;
     text-transform: uppercase;
 } 
-/* .sideBlock img{max-width:45%;} */
+.sideBlock img{
+	/* max-width:45%; */
+	box-shadow:0 3px 5px #444;
+	}
 .sideBlock a {
     float: left;
     max-width: 45%;
@@ -165,8 +180,6 @@ footer {
     background-position: 0 bottom;
     background-repeat: repeat-x;
     border-top: 4px double #bfbfbf;
-    clear: both;
-    float: left;
 	padding:20px 0;
 	margin-top:20px;
 	margin-left:1.0416667%;

@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	
+	<body>
+		<div style="border: 2px dashed #ccc;width:320px;text-align:center;">     
+			<label for="sitename">网站名(key)：</label>  
+			<input type="text" id="sitename" name="sitename" class="text"/>  
+			<br/>  
+			<label for="siteurl">网 址(value)：</label>  
+			<input type="text" id="siteurl" name="siteurl"/>  
+			<br/>  
+			<input type="button" onclick="save()" value="新增记录"/>  
+			<hr/>  
+			<label for="search_phone">输入网站名：</label>  
+			<input type="text" id="search_site" name="search_site"/>  
+			<input type="button" onclick="find()" value="查找网站"/>  
+			<p id="find_result"><br/></p>  
+		</div>
+	</body>
+	<script>
+		function save(){
+			var sitename = document.getElementById('sitename').value,
+				siteurl = document.getElementById('siteurl').value,
+				find_result = document.getElementById('find_result');
+			
+			if(typeof(Storage) !== 'undefined'){
+				
+				localStorage.setItem(sitename, siteurl);
+				alert('添加成功！');
+				
+			}
+			else
+				find_result.innerHTML = '对不起，你的浏览器不支持web storage。';	
+		}
+		
+		function find(){
+			var search_site = document.getElementById('search_site').value,
+				find_result = document.getElementById('find_result');
+				
+			var siteurl_result = localStorage.getItem(search_site)
+			
+			if(typeof(Storage) !== 'undefined'){
+				
+				find_result.innerHTML = search_site + '的网址是：' + siteurl_result;
+				
+			}
+			else
+				find_result.innerHTML = '对不起，你的浏览器不支持web storage。';	
+		}
+	</script>
+</html>
+

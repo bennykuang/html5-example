@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<canvas style="width:300px;height:200px;border:1px solid #CCC;" id="myCanvas"></canvas>
+	</body>
+	<script>
+		var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		
+		ctx.beginPath();
+		ctx.strokeStyle = 'blue';
+		ctx.moveTo(0,80);
+		ctx.lineTo(300,80);
+		ctx.stroke();
+		
+		ctx.font = "15px Arial";
+		ctx.textBaseline = 'top';
+		ctx.fillText('top', 0,80);
+		
+		ctx.textBaseline = 'middle';
+		ctx.fillText('middle', 30,80);
+		
+		ctx.textBaseline = 'bottom';
+		ctx.fillText('bottom', 80,80);
+		
+		ctx.textBaseline = 'alphabetic';
+		ctx.fillText('alphabetic', 130,80);
+		
+		ctx.textBaseline = 'hanging';
+		ctx.fillText('hanging', 200,80);
+		
+		ctx.textBaseline = 'ideographic';
+		ctx.fillText('ideographic', 230,80);
+	</script>
+</html>

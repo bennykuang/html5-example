@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<canvas style="width:300px;height:200px;border:1px solid #CCC;" id="myCanvas"></canvas>
+	</body>
+	<script>
+		var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		
+		ctx.font = "16px Arial";
+		ctx.strokeStyle = 'blue';
+		
+		var txt = 'Hello world!';
+		var txtObj = ctx.measureText(txt);
+		ctx.fillText(txt + ' width: ' + txtObj.width, 20, 80);
+		
+	</script>
+</html>

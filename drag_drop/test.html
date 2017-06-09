@@ -1,0 +1,67 @@
+<!DOCTYPE>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title>HTML5 拖放（Drag 和 Drop）</title>
+<style>
+p:after{content:'.';height:0;display:block;clear:both;visibility:hidden;}
+p{*zoom:1;}
+.fl{float:left;display:inline-block;}
+</style>
+</head>
+<body>
+	<p style="margin:100px;">
+		<span class="fl" style="width:250px;height:150px;border:1px solid #CCC;" id="box">
+			<span style="display:inline-block;background-color:gray;width:80px;height:50px;cursor:pointer;" draggable="true" id="drag"></span>
+		</span>
+		<span class="fl" style="display:inline-block;width:250px;height:150px;border:1px solid #CCC; margin-left:200px;" id="target_box"></span>
+	</p>
+</body>
+<script>
+	var box = document.querySelector('#box'),
+		drag = document.querySelector('#drag'),
+		target = document.querySelector('#target_box');
+		
+	drag.addEventListener('dragstart', function(e){
+		e.dataTransfer.setData('text', e.target.id);	
+		console.log(e.target.id);
+	});
+	/*drag.addEventListener('drag', function(e){
+		console.log('被拖动的元素在拖动过程中持续触发');
+	});
+	
+	target.addEventListener('dragenter', function(e){
+		console.log('被拖动的元素进入目标元素时触发');
+	});*/
+	
+	
+	target.addEventListener('dragover', function(e){
+		e.preventDefault();	
+		e.dataTransfer.dropEffect = 'link';
+		return false;
+	});
+	
+	box.addEventListener('dragover', function(e){
+		e.preventDefault();
+		e.dataTransfer.dropEffect = 'link';
+		return false;	
+	});
+	
+	target.addEventListener('drop', function(e){
+		e.preventDefault();
+		var _id = e.dataTransfer.getData('text');
+		target.appendChild(document.getElementById(_id));
+	});
+	
+	box.addEventListener('drop', function(e){
+		e.preventDefault();
+		var _id = e.dataTransfer.getData('text');
+		box.appendChild(document.getElementById(_id));
+	});
+	
+	/*drag.addEventListener('dragend', function(e){
+		elementDragged = null;
+	});*/
+</script>
+</html>

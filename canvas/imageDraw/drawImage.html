@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+<body>
+<img src="images/eg_tulip.jpg" id="eg_tulip" style="display:none;">
+<br>
+<canvas id="myCanvas" style="width:300px;height:200px;border:1px solid #CCC;"></canvas>
+
+</body>
+	<script>
+		document.getElementById('eg_tulip').onload = function(){
+			var c = document.getElementById('myCanvas');
+			var ctx = c.getContext('2d');
+			var eg_tulip = document.getElementById('eg_tulip');
+			ctx.drawImage(eg_tulip,90,130,90,80, 20,20,90,80);
+			console.log('width: ' + eg_tulip.width + 'px; height: ' + eg_tulip.height + 'px');
+		}
+	</script>
+</html>

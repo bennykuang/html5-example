@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+<body>
+<canvas id="myCanvas" style="width:300px;height:200px;border:1px solid #CCC;"></canvas>
+<!--<span style="display:none;"><img src="lamp.gif" width="32" height="32" id="lamp"></span>-->
+</body>
+	<script>
+		var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		var my_gradient = ctx.createLinearGradient(0,0,0,100);
+		my_gradient.addColorStop(0, 'red');
+		my_gradient.addColorStop(0.5, 'black');
+		my_gradient.addColorStop(1, 'red');
+		ctx.fillStyle = my_gradient;
+		ctx.fillRect(10,10,200,100);
+	</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<canvas style="width:300px;height:200px;border:1px solid #CCC;" id="myCanvas"></canvas>
+	</body>
+	<script>
+		var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		
+		ctx.font = "20px Georgia";
+		ctx.strokeStyle = 'blue';
+		ctx.strokeText('Hello world!',20, 50);
+		
+		ctx.fillStyle = 'blue';
+		ctx.fillText('Hello world!',150, 50);
+		
+		/*放射性渐变来写文本 "w3school.com.cn"：*/
+		ctx.font = '30px Verdana';
+		var grd = ctx.createRadialGradient(130,60,5,130,60,100);
+		grd.addColorStop(0, 'blue');
+		grd.addColorStop(0.8, 'yellow');
+		grd.addColorStop(1, 'red');
+		ctx.strokeStyle = grd;
+		ctx.strokeText('w3school.com.cn',20, 90); 
+		/*end*/
+		
+		/*放射性渐变来写文本 "w3school.com.cn"：*/
+		ctx.font = '30px Verdana';
+		var grd = ctx.createRadialGradient(130,60,5,130,60,100);
+		grd.addColorStop(0, 'blue');
+		grd.addColorStop(0.8, 'yellow');
+		grd.addColorStop(1, 'red');
+		ctx.fillStyle = grd;
+		ctx.fillText('w3school.com.cn',20, 130); 
+		/*end*/
+	</script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+<body>
+<canvas id="myCanvas" style="width:300px;height:200px;border:1px solid #CCC;"></canvas>
+</body>
+	<script>
+		var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		var grd = ctx.createRadialGradient(150,80,0,150,80,200)
+		grd.addColorStop(0, 'red');
+		grd.addColorStop(1, 'black');
+		ctx.fillStyle = grd;
+		ctx.fillRect(0,0,300,200);
+	</script>
+</html>

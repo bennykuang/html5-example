@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+<body>
+<img src="images/eg_tulip.jpg" id="eg_tulip" style="display:none;">
+<br>
+<canvas id="myCanvas" style="width:300px;height:200px;border:1px solid #CCC;"></canvas>
+<button type="button" onClick="copy();">复制矩形</button>
+</body>
+	<script>
+		var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		ctx.fillStyle = 'green';
+		ctx.fillRect(10,10,120,100);
+		
+		function copy(){
+			var imgData = ctx.getImageData(10,10,120, 100);
+			ctx.putImageData(imgData,170,10);	
+		}
+	</script>
+</html>

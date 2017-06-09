@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+<body>
+<img src="images/eg_tulip.jpg" id="eg_tulip">
+<br>
+<canvas id="myCanvas" style="width:400px;height:266px;border:1px solid #CCC;"></canvas>
+</body>
+	<script>
+		/*var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		ctx.fillStyle = 'green';
+		ctx.fillRect(10,10,120,100);
+		
+		function copy(){
+			var imgData = ctx.getImageData(10,10,120, 100);
+			ctx.putImageData(imgData,170,10);	
+		}*/
+		document.getElementById('eg_tulip').onload = function(){
+			var c = document.getElementById('myCanvas');
+			var ctx = c.getContext('2d');
+			var img = document.getElementById('eg_tulip');
+			ctx.drawImage(img, 0, 0);
+			var imgData = ctx.getImageData(0, 0, c.width, c.height);
+			for(var i = 0; i < imgData.data.length; i+=4){
+				imgData.data[i + 0] = 255 - imgData.data[i + 0];
+				imgData.data[i + 1] = 255 - imgData.data[i + 1];
+				imgData.data[i + 2] = 255 - imgData.data[i + 2];
+				imgData.data[i + 3] = 255;	
+			}	
+			ctx.putImageData(imgData , 0, 0);
+		};
+	</script>
+</html>

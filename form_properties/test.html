@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<form action="" id="form1">
+			<p>
+				email : <input type="email" name="_email" autocomplete="of">
+			</p>
+			<p>
+				text : <input type="text" name="_text" autofocus>
+			</p>
+			<p>
+				<input type="submit" value="提交">
+				<input type="submit" value="提交到xxx.php" formaction="xxx.php">
+				<input type="submit" value="不验证提交" formnovalidate>
+			</p>
+		</form>
+		<p>
+			last name : <input type="text" name="_lastName" form="form1">
+		</p>
+		<p style="color:gray;margin-top:20px;">
+			注：
+			<ul style="color:gray;">
+				<li>input标记要位于form表单中并且要含有submit提交按钮,要指定name属性；</li>
+				<li>默认情况下，input，password等标记含有autocomplete为on的属性，如果要取消自动完成需要显示指定autocomplete为off；</li>
+				<li>浏览器自动记忆的值为已提交的值，并且这些值得顺序为提交的先后顺序；</li>
+				<li>浏览器自动记忆的值，是按照标签name属性为标准的，也就是如果表单中的input标记有相同的name那么就有相同的自动完成列表，并且无论是否在不在相同form中，无论是否在不在同一个网页中；</li>
+				<li>实验证明，自动完成列表信息没有存放在浏览器缓存中</li>
+			</ul>
+		</p>
+	</body>
+</html>

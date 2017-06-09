@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<canvas style="width:300px;height:200px;border:1px solid #CCC;" id="myCanvas"></canvas>
+	</body>
+	<script>
+		var c = document.getElementById('myCanvas');
+		var ctx = c.getContext('2d');
+		
+		/*绘制一个矩形。请用蓝色的笔触颜色*/
+		/*ctx.strokeStyle = '#0000FF';
+		ctx.strokeRect(10, 10, 250, 100);*/
+		/*end*/
+		
+		/*绘制一个矩形。使用渐变笔触*/
+		/*var grd = ctx.createLinearGradient(0,0,240,0);
+		grd.addColorStop(0, 'blue');
+		grd.addColorStop(0.5, 'yellow');
+		grd.addColorStop(1, 'red');
+		ctx.strokeStyle = grd;
+		ctx.lineWidth = 5;
+		ctx.strokeRect(10, 10, 250, 100);*/
+		/*end*/
+		
+		/*用一个渐变笔触来写文本 "w3school.com.cn"：*/
+		/*ctx.font = '30px Verdana';
+		var grd = ctx.createLinearGradient(0,0,c.width,0);
+		grd.addColorStop(0, 'blue');
+		grd.addColorStop(0.5, 'yellow');
+		grd.addColorStop(1, 'red');
+		ctx.strokeStyle = grd;
+		ctx.strokeText('w3school.com.cn',10, 80); */
+		/*end*/
+		
+		/*放射性渐变来写文本 "w3school.com.cn"：*/
+		ctx.font = '30px Verdana';
+		var grd = ctx.createRadialGradient(130,60,5,130,60,100);
+		grd.addColorStop(0, 'blue');
+		grd.addColorStop(0.8, 'yellow');
+		grd.addColorStop(1, 'red');
+		ctx.strokeStyle = grd;
+		ctx.strokeText('w3school.com.cn',10, 80); 
+		/*end*/
+	</script>
+</html>

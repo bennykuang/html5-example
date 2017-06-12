@@ -6,6 +6,7 @@
 	visibility:hidden;
 }
 .clearfix{*zoom:1;}
+/* *{transition:all 1s;} */
 @font-face { 
     font-family: 'BebasNeueRegular'; 
     src: url('../fonts/bebas_neue/BebasNeue Bold.otf'); 
@@ -16,7 +17,7 @@ body{
 	font-size:100%;
 	font-size:16px;
 	font-size:1em;
-	box-shadow:inset 0 0 30px #000;
+	/* box-shadow:inset 0 0 30px hsl(0, 0%, 0%); */
 }
 img{max-width:100%;}
 #wrapper { 
@@ -55,6 +56,7 @@ nav ul{display:table-row;}
 nav ul li{ 
 	display:table-cell;
 	margin-right:2.6595745%;
+	text-align:center;
 	}
 nav ul li:last-child{text-align:right;}
 nav ul li:first-child{text-align:left;}
@@ -73,13 +75,20 @@ nav ul li a{
     font-family:'BebasNeueRegular';
     font-size:1.875em; /* 30 ÷ 16 */
 	text-shadow:0 1px 0 hsla(0, 0%, 100%, 0.75);
+	display:block;
 }
+nav ul li a:hover{/*transform:skew(10deg, 2deg);*/animation:warning .3s;}
 .oscarMain {
     float: left;
 	margin-top:-28px;
 	width:28.9398281%;/* 202 ÷ 698 */
 	max-width:202px;
     margin-right: 1.0416667%;
+}
+@keyframes warning{
+	0%{transform:scale(1);}
+	50%{transform:scale(1.1);}
+	100%{transform:scale(1);}
 }
  
 #content { 
@@ -88,6 +97,7 @@ nav ul li a{
 	float: right; 
 	/* width:698px; */
 	width: 72.7083333%; /* 698 ÷ 960 */
+	/* background:radial-gradient(#ffffff 72%, #dddddd 100%); */
 } 
 #content h1 {
     font-family: 'BebasNeueRegular';
@@ -136,12 +146,15 @@ nav ul li a{
     float: left;
     font: 2.25em 'BebasNeueRegular';
     margin-top: 30px;
-    padding: 3%;
+    padding: 30px;
     text-decoration: none;
+	background:linear-gradient(90deg, #b01c20 0%, #f15c60 100%);
     text-shadow: 0 1px black;
-    transition-duration: 2s, 3s, 8s;
-    transition-property: border, color, text-shadow;
+    transition-property:border,color,text-shadow;
+	transition-duration:2s,3s,8s;
+	/* transition:all 1s ease 0s; */
 }
+/* #content a.button span{font-size:1.3em;} */
 #content a.button:hover {
     border: 1px solid black;
     color: black;
@@ -156,6 +169,7 @@ aside  {
 	margin-left:1.0416667%;
 	/* width:218px; */
     width: 22.7083333%;/* 218 ÷ 960 */
+	background:linear-gradient(to bottom, #fff 0%, #e4e4e4 50%, #fff 100%);
 }
 aside  h1 {
     font-family: "BebasNeueRegular";
@@ -174,6 +188,29 @@ aside  h1 {
 }
 .sideImage {
     margin-left: 3%;
+}
+@keyframes swing{
+	0%{transform:rotate(3deg)}
+	20%{transform:rotate(7deg)}
+	60%{transform:rotate(10deg)}
+	80%{transform:rotate(7deg)}
+	100%{transform:rotate(3deg)}
+}
+.unSung a:nth-child(odd) img{
+	transform:rotate(3deg);
+	animation:swing 0.1s 5 ease-in;
+}
+.unSung a:nth-child(even) img{
+	transform:rotate(-3deg);
+	animation:swing 0.1s 5 0.3s ease-in;
+}
+.overHyped a:nth-child(odd) img{
+	transform:rotate(3deg);
+	animation:swing 0.1s 5 0.2s ease-in;
+}
+.overHyped a:nth-child(even) img{
+	transform:rotate(-3deg);
+	animation:swing 0.1s 5 0.5s ease-in;
 }
 footer {
     background-image: url("../img/buntingFWinvert.png");
@@ -200,6 +237,18 @@ footer span a {
 }
 
 @media screen and (max-width:768px){
+	body{
+		background-color:#fff;
+		background-image: 
+		radial-gradient(hsla(0, 0%, 87%, 0.31) 9px, transparent 10px), 
+		repeating-radial-gradient(hsla(0, 0%, 87%, 0.31) 0,  
+                hsla(0, 0%, 87%, 0.31) 4px, transparent 5px,  
+                transparent 20px, hsla(0, 0%, 87%, 0.31) 21px,  
+                hsla(0, 0%, 87%, 0.31) 25px, transparent 26px,  
+                transparent 50px);     
+		background-size: 30px 30px, 90px 90px;  
+		background-position: 0 0;
+	}
 	#wrapper, header, footer, nav { 
 		width: 748px;
 		margin:0;

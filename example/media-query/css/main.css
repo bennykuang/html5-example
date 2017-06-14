@@ -15,6 +15,7 @@ a:hover {
     color: #000;
 }
 ol, ul{list-style:outside none none;}
+datalist{display:none;}
 @font-face { 
     font-family: 'BebasNeueRegular'; 
     src: url('../fonts/bebas_neue/BebasNeue Bold.otf'); 
@@ -152,6 +153,12 @@ nav ul li a:hover{animation:1.5s ease-in 0s normal none infinite running warning
 	font-family:"BitstreamVeraSansRoman";
 	text-shadow:none;
 }
+#content h2{
+	font-family:'BebasNeueRegular';
+	font-size:1.875em;
+	font-weight:400;
+	text-transform:uppercase;
+}
 #content p {
     color: #757474;
     font-family: "ColaborateThinRegular";
@@ -288,6 +295,103 @@ footer p {
 }
 footer span a {
     color: #bfbfbf;
+}
+#redemption{
+	width:100%;
+	font-family:'ColaborateThinRegular';
+	font-weight:400;
+}
+#redemption hgroup{
+	margin-bottom:20px;
+}
+#redemption fieldset{
+	background:#fff;
+	background:linear-gradient(to top, #ffffff 0%,#f2f2f2 100%); 
+	border:1px dotted #ccc;
+	border-radius:4px;
+	box-shadow:2px 2px 5px hsla(0, 0%, 16.6667%, 0.3);
+	margin-bottom:20px;
+	padding:2%;  
+}
+#howYouRateThis,#yearOfCrime { 
+  text-align: right; 
+} 
+#redemption legend{
+	color:#434242;
+	float:left;
+	font-size:0.8em;
+	font-style:italic;
+	margin-bottom:20px;
+	width:100%;
+}
+#redemption div{
+	float:left;
+	margin-bottom:15px;
+	width:100%;
+}
+#redemption label{
+	float:left;
+	width:40%;
+}
+#redemption input{
+	height:20px;
+	font-size:1em;
+	width:40%;
+	float:right;
+}
+#redemption textarea{
+	float:right;
+	font-size:1em;
+	height:60px;
+	width:40%;
+}
+#redemption span#range{
+	clear:both;
+	color:#f00;
+	float:left;
+	font-size:3em;
+	text-align:center;
+	width:100%;
+}
+#redemption input#submit{
+	background-color:#b01c20;
+	borde:1px solid #bfbfbf;
+	border-radius:8px;
+	box-shadow:5px 5px 5px hsla(0, 0%, 26.6667%, 0.8);
+	color:#fff;
+	float:right;
+	font:1.25em "BebasNeueRegular";
+	height:34px;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-decoration:none;
+	text-shadow:0 1px #000;
+}
+input{
+	float:right;
+	height:20px;
+	width:40%;
+}
+input:not([type="range"]), textarea, select{
+	background:#fff;
+	background:linear-gradient(to top, #fff 0%, #ededed 8%, #fff 100%);
+	border:1px solid #bfbfbf;
+	border-radius:4px;
+	box-shadow:2px 2px 5px hsla(0, 0%, 16.6667%, 0.1);
+	font-size:1.1em;
+	line-height:1.2em;
+	padding:0.2em;
+}
+input:required{
+	border:1px solid rgba(253, 8, 8, 0.29);
+}
+input:focus:invalid{
+	background:url('../img/cross.png') no-repeat right;
+	padding-right:3px;
+}
+input:focus:valid{
+	background:url('../img/tick.png') no-repeat right;
+	padding-right:3px;
 }
 
 /* 媒体查询开始 */
